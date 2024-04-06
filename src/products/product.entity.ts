@@ -1,5 +1,5 @@
 import { Category } from "src/categories/category.entity";
-import { Column, Entity, PrimaryGeneratedColumn,  PrimaryColumn, OneToOne, JoinColumn, ManyToOne } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn,  PrimaryColumn, OneToOne, JoinColumn, ManyToOne, CreateDateColumn, UpdateDateColumn } from "typeorm";
 
 export enum Talle {
   SMALL = 'SMALL',
@@ -31,4 +31,10 @@ export class Product {
 
   @Column()
   talle: Talle;
+
+  @CreateDateColumn({ name: 'created_at' })
+  createdAt: Date;
+
+  @UpdateDateColumn({ name: 'updated_at' })
+  updatedAt: Date;
 }
