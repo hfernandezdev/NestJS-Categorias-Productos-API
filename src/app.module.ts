@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProductsModule } from './products/products.module';
 import { CategoriesModule } from './categories/categories.module';
+import { APP_INTERCEPTOR } from '@nestjs/core';
+import { ApiResponseInterceptor } from './interceptors/api-response/api-response.interceptor';
 
 @Module({
   imports: [
@@ -21,6 +23,12 @@ import { CategoriesModule } from './categories/categories.module';
     CategoriesModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: ApiResponseInterceptor,
+    },
+  ],
 })
 export class AppModule {}
