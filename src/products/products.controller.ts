@@ -9,6 +9,16 @@ export class ProductsController {
 
   constructor(private productsService: ProductsService) {}
 
+  @Get('/active-categories')
+  async findAllActiveCategoriesProducts(): Promise<Product[]> {
+    return this.productsService.findAllActiveCategoriesProducts();
+  }
+
+  @Get('/by-talle')
+  async findMediumLargeProducts(): Promise<Product[]> {
+    return this.productsService.findMediumLargeProducts();
+  }
+
   @Get()
   getProducts(): Promise <Product[]> {
     return this.productsService.getProducts();

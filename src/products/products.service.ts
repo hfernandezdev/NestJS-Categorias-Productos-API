@@ -71,4 +71,18 @@ export class ProductsService {
     return result;
   }
 
+  async findAllActiveCategoriesProducts(): Promise<Product[]> {
+    return this.productRepository
+      .createQueryBuilder('product')
+      .innerJoinAndSelect('product.categoria', 'categoria')
+      .where('categoria.activa = :activa', { activa: true })
+      .getMany();
+}
+
+  async findMediumLargeProducts(): Promise<Product[]> {
+    return this.productRepository
+      .createQueryBuilder('product')
+      .where('product.talle = :medium OR product.talle = :large', { medium: 'MEDIUM', large: 'LARGE' })
+      .getMany();
+  }
 }
