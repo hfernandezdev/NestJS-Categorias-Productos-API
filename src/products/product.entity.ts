@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn,  PrimaryColumn } from "typeorm";
 
 export enum Talle {
   SMALL = 'SMALL',
@@ -9,7 +9,7 @@ export enum Talle {
 
 @Entity({ name: 'products' })
 export class Product {
-  @PrimaryGeneratedColumn()
+  @PrimaryColumn()
   id: string;
 
   @Column({ unique: true })
