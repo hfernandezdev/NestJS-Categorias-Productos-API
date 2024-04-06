@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn,  PrimaryColumn } from "typeorm";
+import { Category } from "src/categories/category.entity";
+import { Column, Entity, PrimaryGeneratedColumn,  PrimaryColumn, OneToOne, JoinColumn, ManyToOne } from "typeorm";
 
 export enum Talle {
   SMALL = 'SMALL',
@@ -20,6 +21,10 @@ export class Product {
 
   @Column()
   id_categoria: number;
+
+  @ManyToOne(() => Category, category => category.products)
+  @JoinColumn({ name: 'id_categoria' })
+  categoria: Category;
 
   @Column()
   precio: number;

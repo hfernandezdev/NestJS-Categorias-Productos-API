@@ -12,7 +12,7 @@ export class ProductsService {
   constructor(@InjectRepository(Product) private productRepository: Repository<Product>) {}
 
   getProducts() {
-    return this.productRepository.find();
+    return this.productRepository.find({ relations: ['categoria'] });
   }
 
   async getProduct(id: string) {
@@ -41,6 +41,8 @@ export class ProductsService {
     }
 
     product['id'] = v4();
+    product['categoria'] = { id: product.id_categoria };
+
     const newProduct = this.productRepository.create(product);
     return this.productRepository.save(newProduct);
   }

@@ -10,7 +10,7 @@ export class CategoriesService {
   constructor(@InjectRepository(Category) private categoryRepository: Repository<Category>) {}
 
   getCategories() {
-    return this.categoryRepository.find();
+    return this.categoryRepository.find({ relations: ['products'] });
   }
 
   async getCategory(id: number) {
