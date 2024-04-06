@@ -21,7 +21,7 @@ export class CategoriesService {
     });
 
     if( !categoryFound ) {
-      throw new HttpException("Category not found",  HttpStatus.NOT_FOUND);
+      throw new HttpException("No se encontraron datos",  HttpStatus.NOT_FOUND);
     }
 
     return categoryFound;

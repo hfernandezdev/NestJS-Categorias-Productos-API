@@ -23,7 +23,7 @@ export class ProductsService {
     });
 
     if( !productFound ) {
-      throw new HttpException("Product not found",  HttpStatus.NOT_FOUND);
+      throw new HttpException("No se encontraron datos",  HttpStatus.NOT_FOUND);
     }
 
     return productFound;
@@ -55,7 +55,7 @@ export class ProductsService {
     });
 
     if( !productFound ) {
-      throw new HttpException("Product not found",  HttpStatus.NOT_FOUND);
+      throw new HttpException("No se encontraron datos",  HttpStatus.NOT_FOUND);
     }
 
     return this.productRepository.delete({ id });
@@ -65,7 +65,7 @@ export class ProductsService {
     const result = await this.productRepository.update({ id }, product);
 
     if (result.affected === 0) {
-      throw new HttpException("Product not found",  HttpStatus.NOT_FOUND);
+      throw new HttpException("No se encontraron datos",  HttpStatus.NOT_FOUND);
     }
 
     return result;
