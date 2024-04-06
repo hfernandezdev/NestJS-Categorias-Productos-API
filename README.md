@@ -1,73 +1,48 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# NestJS Categorías y Productos API
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+![Screenshot](/images/Screenshot.png)
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Descripción general:
+- Este proyecto es una API desarrollada con NestJS para gestionar categorías y productos. Proporciona endpoints para realizar operaciones CRUD en productos, así como consultas adicionales para listar productos por categoría activa y por tamaño.
 
-## Description
+## Características principales:
+- Implementación de una API RESTful con NestJS.
+- Manejo de entidades de Categorías y Productos con TypeORM.
+- Endpoints para realizar operaciones CRUD en Productos.
+- Consultas personalizadas para listar productos por categoría activa y por tamaño.
+- Validación de solicitudes mediante DTOs.
+- Generación de migraciones para la base de datos con TypeORM.
+- Utilización de UUID para las claves primarias en lugar de autonumeración.
+- Implementación de HTTP Interceptor para estandarizar las respuestas API.
+- Campos created_at y updated_at para seguimiento de tiempo de creación y actualización de registros.
+- Autodocumentación de la API con Swagger.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Tecnologías utilizadas:
+- [NestJS](https://nestjs.com/) - Framework de Node.js para construir aplicaciones eficientes, fáciles de mantener y escalables.
+- [TypeORM](https://typeorm.io/) - ORM (Object-Relational Mapping) para TypeScript y JavaScript.
+- [PostgreSQL](https://www.postgresql.org/) - Sistema de gestión de bases de datos relacional de código abierto.
+- [Swagger](https://swagger.io/) - Herramienta para documentar APIs RESTful.
+- [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) - Identificador único universal para las claves primarias de las entidades.
+- [HTTP Interceptor](https://docs.nestjs.com/interceptors) - Mecanismo para interceptar y manipular las solicitudes HTTP.
 
-## Installation
+## Requisitos:
+- Node.js y npm instalados en el sistema.
+- Base de datos relacional instalada (MySQL/PostgreSQL) y en ejecución en el sistema.
 
-```bash
-$ npm install
-```
+## Documentación:
+- Puedes acceder a la documentación de la API en [http://localhost:3000/api-docs](http://localhost:3000/api-docs) una vez que la aplicación esté en ejecución.
 
-## Running the app
+## Importación en Postman:
+- Abre Postman.
+- Ve a la pestaña "Import" en la esquina superior izquierda.
+- Selecciona la opción "Import File".
+- Busca y selecciona el archivo de especificación de OpenAPI descargado.
+- Postman importará automáticamente la especificación y generará una nueva colección con todas las solicitudes y rutas definidas.
+- [Descargar la colección de Postman](openapi-postman-collection/openapi-postman-collection.json)
 
-```bash
-# development
-$ npm run start
+## Autor:
+- [Humberto Fernández (Github)](https://github.com/hfernandezdev)
 
-# watch mode
-$ npm run start:dev
+## Soporte:
 
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+Si tienes algún problema o pregunta, por favor [contacta conmigo](mailto:humbertof44@gmail.com).
